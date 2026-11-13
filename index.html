@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#091b48"><title>Family Feud — Game Display</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="display">
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">FF</span><span>FAMILY <b>FEUD</b></span></a><div class="top-actions"><span class="save-status"><i></i> LIVE GAME DISPLAY</span></div></header>
+  <main class="app-shell">
+    <section class="hero"><div class="eyebrow"><span class="eyebrow-line"></span> THE CLASSIC GAME SHOW EXPERIENCE <span class="eyebrow-line"></span></div><h1>FAMILY <span>FEUD</span></h1><p class="hero-sub">Survey says… let’s play!</p></section>
+    <section class="waiting panel" id="waitingPanel"><div class="waiting-mark">FF</div><h2>Waiting for the host</h2><p>The game will appear here as soon as the host starts a new game.</p></section>
+    <section class="game-area hidden" id="gameArea">
+      <div class="scoreboard"><article class="score-card score-blue"><div class="score-team-label"><span class="team-dot"></span><span id="team1Name">TEAM ONE</span></div><div class="score-value" id="score1">0</div><div class="score-caption">TOTAL POINTS</div></article><div class="round-center"><span class="round-label">ROUND</span><strong id="roundNumber">01</strong><span class="round-sub" id="roundMultiplier">SINGLE POINTS</span></div><article class="score-card score-red"><div class="score-team-label"><span class="team-dot"></span><span id="team2Name">TEAM TWO</span></div><div class="score-value" id="score2">0</div><div class="score-caption">TOTAL POINTS</div></article></div>
+      <div class="display-status"><span class="turn-indicator"><span class="live-dot"></span><span id="turnText">TEAM ONE’S TURN</span></span><span class="question-number" id="questionNumber">QUESTION 01</span></div>
+      <section class="question-panel panel"><div class="question-meta"><span class="survey-label">✦ 100 PEOPLE SURVEYED</span><span class="board-count" id="revealedCount">0 OF 6 ANSWERS REVEALED</span></div><h2 id="questionText">Question appears here</h2><div class="answer-board" id="answerBoard" aria-live="polite"></div><div class="board-footer"><span class="board-hint">WATCH THE BOARD — ANSWERS REVEALED BY THE HOST</span><span class="round-bank" id="roundBank">ROUND BANK: 0 PTS</span></div></section>
+      <section class="display-strikes panel"><div><span class="strike-heading">STRIKES</span><p>Three strikes gives the other team a chance to steal.</p></div><div class="strikes" aria-label="Current strikes"><span class="strike" id="strike1">X</span><span class="strike" id="strike2">X</span><span class="strike" id="strike3">X</span></div></section>
+      <div class="display-message" id="displayMessage" aria-live="polite">Good luck to both teams!</div>
+    </section>
+    <section class="rules-display panel" id="rulesPanel">
+      <details open>
+        <summary><span class="rules-title">✦ GAME RULES &amp; MECHANICS</span><span class="rules-toggle" aria-hidden="true"></span></summary>
+        <div class="rules-grid">
+          <article class="rules-card">
+            <h3><span class="rules-tag">A</span> Group Formation</h3>
+            <p class="rules-lead">Participants go through several rounds of grouping challenges. Follow the number of members instructed by the host.</p>
+            <ol class="formation-list">
+              <li><span>Group yourselves into <b>30</b></span><em>15 participants eliminated</em></li>
+              <li><span>Group yourselves into <b>17</b></span><em>13 participants remain</em></li>
+              <li><span>Group yourselves into <b>5</b></span><em>10 participants remain</em></li>
+              <li><span>Group yourselves into <b>4</b></span><em>8 participants remain</em></li>
+              <li><span>Group yourselves into <b>3</b></span><em>6 participants remain</em></li>
+            </ol>
+            <p class="rules-callout">The final 6 participants advance to the Family Feud game.</p>
+          </article>
+          <article class="rules-card">
+            <h3><span class="rules-tag">B</span> Family Feud Mechanics</h3>
+            <div class="rules-block">
+              <h4>Teams</h4>
+              <p>2 competing teams, 3 members each. Each team gets <b>1 minute</b> to:</p>
+              <ul><li>Choose a team leader</li><li>Create a team name</li><li>Prepare a team chant</li></ul>
+            </div>
+            <div class="rules-block">
+              <h4>Game Format</h4>
+              <p>3 rounds in total:</p>
+              <div class="round-chips"><span>Round 1 · <b>Single</b></span><span>Round 2 · <b>Single</b></span><span class="chip-double">Round 3 · <b>Double</b></span></div>
+            </div>
+          </article>
+          <article class="rules-card rules-wide">
+            <h3><span class="rules-tag">★</span> Rules and Mechanics</h3>
+            <div class="rules-steps">
+              <div class="rules-step"><h4><i>1</i> Starting the Round</h4><ul><li>Team leaders are the first representatives of their teams.</li><li>The host presents a question.</li><li>The representative with the higher-value answer wins the face-off.</li><li>The winner chooses <b>PLAY</b> or <b>PASS</b>.</li></ul></div>
+              <div class="rules-step"><h4><i>2</i> Play or Pass</h4><ul><li><b>PLAY:</b> your team is responsible for answering the question.</li><li><b>PASS:</b> the opposing team takes over and attempts to answer.</li></ul></div>
+              <div class="rules-step"><h4><i>3</i> Answering Rules</h4><ul><li>No coaching or giving answers to teammates unless the host announces a discussion period.</li><li>If the playing team fails to complete the board and gets <b>three strikes</b>, the opposing team may steal.</li><li>During a steal, only the opposing team’s <b>leader’s</b> answer is accepted.</li></ul></div>
+              <div class="rules-step"><h4><i>4</i> Next Rounds</h4><ul><li>The same format and mechanics apply to succeeding rounds.</li><li>Points earned in each round accumulate.</li><li>The third round has <b>double points</b>.</li></ul></div>
+            </div>
+          </article>
+        </div>
+        <p class="rules-closing">MAY THE BEST FAMILY WIN!</p>
+      </details>
+    </section>
+    <footer class="bottom-note">✦ FAMILY FEUD GAME NIGHT</footer>
+  </main>
+  <script src="script.js"></script>
+</body></html>
